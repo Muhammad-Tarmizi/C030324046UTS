@@ -53,6 +53,19 @@ void InputArray() {
     getch();
 }
 
+void OutputArray() {
+    system("cls");
+    if (n == 0) {
+        cout << "Data kosong. Masukkan data dulu!";
+    } else {
+        cout << "Isi Array:\n";
+        for (int i = 0; i < n; i++) {
+            cout << "Data ke-" << i + 1 << " = " << arr[i] << endl;
+        }
+    }
+    getch();
+}
+
 void mPertama(string pesan){
 system("cls");
 cout<<"hallo saya menu "<<pesan;
@@ -70,7 +83,7 @@ int main() {
             InputArray();
             break;
          case '2':
-            mPertama("ke- dua");
+            OutputArray();
             break;  
           case '3':
             mPertama("ke- tiga");
