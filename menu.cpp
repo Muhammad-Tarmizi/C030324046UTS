@@ -2,8 +2,8 @@
 #include <conio.h> // getch()
 using namespace std;
 
-const int MAX = 100;
-int arr[MAX];  
+const int MAX = 100; // MAX adalah variabel untuk elemen array
+int arr[MAX];
 int n = 0;
 
 void Info() {
