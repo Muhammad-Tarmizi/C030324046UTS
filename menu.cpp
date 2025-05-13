@@ -2,6 +2,10 @@
 #include <conio.h> // getch()
 using namespace std;
 
+const int MAX = 100;
+int arr[MAX];  
+int n = 0;
+
 void Info() {
     system("cls");
     cout << "NAMA                      NIM\n";
@@ -23,6 +27,32 @@ void TampilMenu() {
     cout << "Pilih menu (1-5): ";
 }
 
+void InputArray() {
+    system("cls");
+    cout << "Masukkan jumlah data (1-" << MAX << "): ";
+    cin >> n;
+    if (cin.fail() || n < 1 || n > MAX) {
+        cin.clear();
+        cin.ignore(10000, '\n');
+        cout << "Jumlah data tidak valid!";
+        getch();
+        return;
+    }
+    for (int i = 0; i < n; i++) {
+        cout << "Data ke-" << i + 1 << " : ";
+        cin >> arr[i];
+        if (cin.fail()) {
+            cin.clear();
+            cin.ignore(10000, '\n');
+            cout << "Input tidak valid!";
+            getch();
+            return;
+        }
+    }
+    cout << "Data berhasil dimasukkan!";
+    getch();
+}
+
 void mPertama(string pesan){
 system("cls");
 cout<<"hallo saya menu "<<pesan;
@@ -37,7 +67,7 @@ int main() {
         switch (pilihan) 
         {
           case '1':
-            mPertama("pertama");
+            InputArray();
             break;
          case '2':
             mPertama("ke- dua");
