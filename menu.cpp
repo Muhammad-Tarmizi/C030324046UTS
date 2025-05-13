@@ -1,5 +1,5 @@
 #include <iostream>
-#include <conio.h>
+#include <conio.h> // getch()
 using namespace std;
 
 void info() {
@@ -7,16 +7,17 @@ void info() {
   cout << "Indonesia Hebat, Poliban Juara";
 getch();
 }
-void dMenu(){
-system("cls");
-cout<<"Aplikasi Tampilan Menu"<<"\n";       
-cout<<"1. Menu Pertama"<<"\n";            
-cout<<"2. Menu Kedua"<<"\n";            
-cout<<"3. Menu Ketiga"<<"\n";           
-cout<<"4. Informasi"<<"\n";            
-cout<<"5. Exit"<<"\n";           
-cout<<"Masukan angka :";        
 
+void TampilMenu() {
+    system("cls");
+    cout << "APLIKASI MENU ARRAY\n";
+    cout << "==============================\n";
+    cout << "1. Input Array\n";
+    cout << "2. Output Array\n";
+    cout << "3. Shorting Array (Ascending)\n";
+    cout << "4. Info\n";
+    cout << "5. Exit\n";
+    cout << "Pilih menu (1-5): ";
 }
 
 void mPertama(string pesan){
@@ -25,43 +26,35 @@ cout<<"hallo saya menu "<<pesan;
 getch();
 }
 
-
 int main() {
-char pl;
-do
-{
-    dMenu();
-    pl=getch();
-  switch (pl)
-  {
-   case '1':
-    /* code */
-    mPertama("pertama");
-    break;
-   case '2':
-    mPertama("ke- dua");
-    /* code */ 
-    break;  
-   case '3':
-    mPertama("ke- tiga");
-    /* code */
-    break;  
-   case '4':
-    info();
-    /* code */
-    break;  
-  case '5':
-    /* code */
-    break;
-  
-  default:
-    system("cls");
-    cout<<"Pilihan Tidak Tersedia";
-    getch();
-    break;
-  }
+    char pilihan;
+    do {
+        TampilMenu();
+        pilihan = getch(); // baca satu karakter saja tanpa enter
+        switch (pilihan) 
+        {
+          case '1':
+            mPertama("pertama");
+            break;
+         case '2':
+            mPertama("ke- dua");
+            break;  
+          case '3':
+            mPertama("ke- tiga");
+            break;  
+          case '4':
+            info();
+            break;  
+          case '5':
+            break;
+          default:
+            system("cls");
+            cout<<"Pilihan Tidak Tersedia";
+            getch();
+            break;
+        }
+    } while (pilihan !='5');
+    cout << "\n\nKELUAR DARI PROGRAM!\n";
 
-
-} while (pl!='5');
   return 0;
 }
