@@ -2,10 +2,13 @@
 #include <conio.h> // getch()
 using namespace std;
 
-void info() {
-  system("cls");
-  cout << "Indonesia Hebat, Poliban Juara";
-getch();
+void Info() {
+    system("cls");
+    cout << "NAMA                      NIM\n";
+    cout << "Muhammad Imam Nurrahman   C030324038\n";
+    cout << "Muhammad Tarmizi          C030324046\n";
+    cout << "Muhammad Lathif           C030324090\n";
+    getch();
 }
 
 void TampilMenu() {
@@ -43,7 +46,7 @@ int main() {
             mPertama("ke- tiga");
             break;  
           case '4':
-            info();
+            Info();
             break;  
           case '5':
             break;
