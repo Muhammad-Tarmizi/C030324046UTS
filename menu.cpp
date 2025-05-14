@@ -31,9 +31,9 @@ void InputArray() {
     system("cls");
     cout << "Masukkan jumlah data (1-" << MAX << "): ";
     cin >> n;
-    if (cin.fail() || n < 1 || n > MAX) {
-        cin.clear();
-        cin.ignore(10000, '\n');
+    if (cin.fail() || n < 1 || n > MAX) { // Menangani kesalahan input (misalnya: huruf saat diminta angka) 
+        cin.clear(); //Memulihkan cin dari error agar bisa dipakai lagi   
+        cin.ignore(10000, '\n'); //Membuang input yang tidak valid agar tidak mengganggu proses berikutnya
         cout << "Jumlah data tidak valid!";
         getch();
         return;
@@ -74,7 +74,7 @@ void SortingArray() { // Bubble Sort Ascending
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
                 if (arr[j] > arr[j + 1]) {
-                    int temp = arr[j];
+                    int temp = arr[j]; //temp untuk menyimpan sementara nilai saat proses pertukaran (swap) dua elemen array.
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
                 }
